@@ -47,16 +47,20 @@ mors={
     '?':'..--.. ',
     ' ':'/ ',}
 
-userInput = input('write something:')
-try:
-    for key in userInput:
-        morsOutput = mors[key]
-        for i in morsOutput:
-            if i == '.':
-                playsound(beep1)
-                time.sleep(0.04)
-            if i == '-':
-                playsound(beep2)
-                time.sleep(0.05)
-except KeyError as err:
-    print('I dont have this characteer in my dictionary.you can add if yout want.look the code it is easy to understand.')
+
+while True:
+    userInput = input('write something:')
+    try:
+        for key in userInput:
+            morsOutput = mors[key]
+            for i in morsOutput:
+                if i == '.':
+                    playsound(beep1)
+                    time.sleep(0.04)
+                if i == '-':
+                    playsound(beep2)
+                    time.sleep(0.05)
+            continue
+    except KeyError as err:
+        print('I dont have this characteer in my dictionary.you can add if yout want.look the code it is easy to understand.')
+        continue
